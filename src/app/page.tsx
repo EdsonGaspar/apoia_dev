@@ -1,9 +1,37 @@
+import { Card } from "@/components/cards/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HandCoins } from "lucide-react";
+import {
+  ArrowRight,
+  HandCoins,
+  LucideHeart,
+  LucideShield,
+  LucideZap,
+} from "lucide-react";
+
+const cardItems = [
+  {
+    icon: <LucideZap className="h-8 w-8" />,
+    title: "Rápido e simples",
+    desciption:
+      "Configure sua página em minutos e comece a receber doações imediatamente.",
+  },
+  {
+    icon: <LucideHeart className="h-8 w-8" />,
+    title: "Conexão directa",
+    desciption:
+      "Crie uma conexão mais próxima com seus apoiadores através de mensagens personalizadas.",
+  },
+  {
+    icon: <LucideShield className="h-8 w-8" />,
+    title: "Pagamentos seguros",
+    desciption:
+      "Transações protegidas e transferências automáticas para sua conta bancária.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="h-screen">
+    <div className="bg-gradient-to-b from-white to-amber-50">
       <header className="container mx-auto h-16 text-amber-500 font-bold text-xl flex items-center px-4 py-3 ">
         <HandCoins className="w-6 h-6 mr-2" />
         <span>ApoiaDev</span>
@@ -27,6 +55,20 @@ export default function Home() {
               Começar agora
               <ArrowRight className="w-4 h-4" />
             </Button>
+          </div>
+        </section>
+        <section className="container mx-auto my-20 px-6 md:px-0">
+          <div className=" grid md:grid-cols-3 gap-6 ">
+            {cardItems.map((items) => {
+              return (
+                <Card
+                  key={items.title}
+                  icon={items.icon}
+                  description={items.desciption}
+                  title={items.title}
+                />
+              );
+            })}
           </div>
         </section>
       </main>
