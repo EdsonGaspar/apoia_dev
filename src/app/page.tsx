@@ -31,7 +31,7 @@ const cardItems = [
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-white to-amber-50">
+    <div className="bg-gradient-to-b from-white to-amber-50 min-h-screen">
       <header className="container mx-auto h-16 text-amber-500 font-bold text-xl flex items-center px-4 py-3 ">
         <HandCoins className="w-6 h-6 mr-2" />
         <span>ApoiaDev</span>
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
         </section>
         <section className="container mx-auto my-20 px-6 md:px-0">
-          <div className=" grid md:grid-cols-3 gap-6 ">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 ">
             {cardItems.map((items) => {
               return (
                 <Card

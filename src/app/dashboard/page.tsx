@@ -1,6 +1,7 @@
 import { DollarSign, UsersIcon, Wallet } from "lucide-react";
 import { CardDashBoard } from "./components/card/cardDashboard";
 import { HeaderDesktop } from "./components/header";
+import { DonationTable } from "./components/donation-table/donation-table";
 
 export default function PageDashBoard() {
   const cardItems = [
@@ -41,6 +42,9 @@ export default function PageDashBoard() {
             );
           })}
         </div>
+      </section>
+      <section className="container mx-auto p-6 border">
+        <DonationTable />
       </section>
     </>
   );
