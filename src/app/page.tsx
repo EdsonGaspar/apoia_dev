@@ -31,7 +31,7 @@ const cardItems = [
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-white to-amber-50 min-h-screen">
+    <div className="bg-gradient-to-b from-white to-amber-50 min-h-screen border">
       <header className="container mx-auto h-16 text-amber-500 font-bold text-xl flex items-center px-4 py-3 ">
         <HandCoins className="w-6 h-6 mr-2" />
         <span>ApoiaDev</span>

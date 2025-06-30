@@ -43,7 +43,7 @@ export default function PageDashBoard() {
           })}
         </div>
       </section>
-      <section className="container mx-auto p-6 border">
+      <section className="container mx-auto p-6 my-5">
         <DonationTable />
       </section>
     </>
