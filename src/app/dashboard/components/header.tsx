@@ -12,15 +12,18 @@ export function HeaderDesktop() {
   return (
     <main className="border border-b">
       <header className="container mx-auto h-16  flex items-center justify-between px-4 py-3 ">
-        <aside className="flex items-center text-amber-500 font-bold text-xl">
+        <Link
+          href={"./"}
+          className="flex items-center text-amber-500 font-bold text-xl"
+        >
           <HandCoins className="w-6 h-6 mr-2" />
           <span>ApoiaDev</span>
-        </aside>
+        </Link>
         <aside className="hidden md:flex gap-6 ">
-          <Link href={"#"} className="font-semibold">
+          <Link href={"../dashboard/"} className="font-semibold">
             DashBoard
           </Link>
-          <Link href={"#"} className="font-semibold">
+          <Link href={"../dashboard/me/"} className="font-semibold">
             Meu Perfil
           </Link>
           <LogOut className="text-red-500" />
