@@ -1,4 +1,13 @@
 export function DonationTable() {
+  const donations = [
+    {
+      id: "1",
+      name: "Edson Gaspar",
+      message: "Gosto muito do seu trabalho",
+      value: "1000 Kz",
+      createAt: new Date("2023-10-01T12:00:00Z"),
+    },
+  ];
   return (
     <section>
       {/* Desktop */}
@@ -13,23 +22,40 @@ export function DonationTable() {
             </tr>
           </thead>
           <tbody>
-            <tr className="hover:bg-gray-100 hover:cursor-pointer px-2 py-1.5">
-              <td>Edson Gaspar</td>
-              <td>Gosto muito do teu trabalha</td>
-              <td>1000 Kz</td>
-              <td>29/06/2025</td>
-            </tr>
+            {donations.map((donation) => {
+              return (
+                <tr
+                  className="hover:bg-gray-100 hover:cursor-pointer px-2 py-1.5"
+                  key={donation.id}
+                >
+                  <td>{donation.name}</td>
+                  <td>{donation.message}</td>
+                  <td>{donation.value}</td>
+                  <td>{donation.createAt.toDateString()}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
       {/* Mobile */}
       <div className="flex flex-col gap-1.5 md:hidden  p-6 border rounded-md">
-        <h1 className="text-lg font-bold">Edson Gaspar</h1>
-        <p className="tracking-wide text-zinc-500">Adoro o seu trabalho</p>
-        <div className="flex justify-between">
-          <h3 className="text-amber-500 font-semibold text-lg">1000</h3>
-          <span className="text-zinc-500">Seg Jun 30 2025</span>
-        </div>
+        {donations.map((donation) => {
+          return (
+            <div key={donation.id}>
+              <h1 className="text-lg font-bold">{donation.name}</h1>
+              <p className="tracking-wide text-zinc-500">{donation.message}</p>
+              <div className="flex justify-between">
+                <h3 className="text-amber-500 font-semibold text-lg">
+                  {donation.value}
+                </h3>
+                <span className="text-zinc-500">
+                  {donation.createAt.toDateString()}
+                </span>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
